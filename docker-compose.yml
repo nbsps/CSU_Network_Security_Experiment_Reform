@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+  actfcms:
+    build: ./www
+    container_name: actf-sql-inject
+    restart: always
+    ports:
+      - "11111:80"
+    networks:
+      net-10.1.0.0:
+        ipv4_address: 10.1.0.5
+
+  actfsql:
+    build: ./sql
+    container_name: actf-mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    cap_add:
+      - SYS_NICE
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+    networks:
+      net-10.1.0.0:
+        ipv4_address: 10.1.0.20
+
+networks:
+  net-10.1.0.0:
+    name: net-10.1.0.0
+    ipam:
+      config:
+        - subnet: 10.1.0.0/24

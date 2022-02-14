@@ -1,0 +1,69 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <style>
+      body {
+        background: #f4fde5;
+        font-family: "Sans-serif", Verdana, serif;
+        font-size: 20px;
+      }
+    </style>
+
+    <title>SQLi Lab</title>
+  </head>
+
+  <body>
+    <div
+      class="container col-lg-4 col-lg-offset-4"
+      style="padding-top: 50px; text-align: center"
+    >
+      <h2><b>Aurora CMS</b></h2>
+      <hr />
+      <br />
+      <div class="container">
+        <form action="profile" method="get">
+          <div class="input-group mb-3 text-center">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="uname">USERNAME</span>
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Username"
+              name="username"
+              aria-label="Username"
+              aria-describedby="uname"
+            />
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="pwd">PASSWORD </span>
+            </div>
+            <input
+              type="password"
+              class="form-control"
+              placeholder="Password"
+              name="Password"
+              aria-label="Username"
+              aria-describedby="pwd"
+            />
+          </div>
+          <br />
+          <button type="submit" class="button btn-success btn-lg btn-block">
+            Login
+          </button>
+        </form>
+      </div>
+      <br />
+      <div class="text-center">
+        <p>Copyright &copy; Aurora</p>
+      </div>
+    </div>
+  </body>
+</html>
